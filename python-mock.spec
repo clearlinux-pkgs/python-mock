@@ -1,8 +1,8 @@
 Name     : python-mock
-Version  : 1.0.1
+Version  : 1.3.0
 Release  : 16
-URL      : https://pypi.python.org/packages/source/m/mock/mock-1.0.1.tar.gz
-Source0  : https://pypi.python.org/packages/source/m/mock/mock-1.0.1.tar.gz
+URL      : https://pypi.python.org/packages/source/m/mock/mock-1.3.0.tar.gz
+Source0  : https://pypi.python.org/packages/source/m/mock/mock-1.3.0.tar.gz
 Summary  : A Python Mocking and Patching Library for Testing
 Group    : Development/Tools
 License  : BSD-2-Clause
@@ -17,6 +17,7 @@ BuildRequires : setuptools
 BuildRequires : six
 BuildRequires : traceback2
 BuildRequires : unittest2
+BuildRequires : funcsigs
 
 %description
 mock is a library for testing in Python. It allows you to replace parts of
@@ -32,7 +33,7 @@ python components for the python-mock package.
 
 
 %prep
-%setup -q -n mock-1.0.1
+%setup -q -n mock-1.3.0
 
 %build
 python2 setup.py build -b py2
