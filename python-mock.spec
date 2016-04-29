@@ -1,6 +1,6 @@
 Name     : python-mock
 Version  : 1.3.0
-Release  : 19
+Release  : 20
 URL      : https://pypi.python.org/packages/source/m/mock/mock-1.3.0.tar.gz
 Source0  : https://pypi.python.org/packages/source/m/mock/mock-1.3.0.tar.gz
 Summary  : A Python Mocking and Patching Library for Testing
