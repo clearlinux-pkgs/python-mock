@@ -1,3 +1,0 @@
-# openstack Liberty needs version >= 1.2
-# for more information check https://github.com/openstack/requirements/blob/master/global-requirements.txt
-watchurl=https://pypi.python.org/simple/mock/ ../../packages/source/m/mock/mock-(1\.*).tar.gz.*
