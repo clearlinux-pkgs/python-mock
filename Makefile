@@ -1,4 +1,5 @@
 PKG_NAME := python-mock
-URL := https://pypi.python.org/packages/source/m/mock/mock-1.3.0.tar.gz
+URL := http://pypi.debian.net/mock/mock-2.0.0.tar.gz
+ARCHIVES :=
 
 include ../common/Makefile.common
