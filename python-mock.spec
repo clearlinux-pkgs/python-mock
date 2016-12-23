@@ -4,7 +4,7 @@
 #
 Name     : python-mock
 Version  : 2.0.0
-Release  : 24
+Release  : 25
 URL      : http://pypi.debian.net/mock/mock-2.0.0.tar.gz
 Source0  : http://pypi.debian.net/mock/mock-2.0.0.tar.gz
 Summary  : Rolling backport of unittest.mock for all Pythons
