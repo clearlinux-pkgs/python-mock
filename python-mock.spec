@@ -6,7 +6,7 @@
 #
 Name     : python-mock
 Version  : 2.0.0
-Release  : 30
+Release  : 31
 URL      : http://pypi.debian.net/mock/mock-2.0.0.tar.gz
 Source0  : http://pypi.debian.net/mock/mock-2.0.0.tar.gz
 Source99 : http://pypi.debian.net/mock/mock-2.0.0.tar.gz.asc
@@ -18,7 +18,8 @@ Requires: funcsigs
 Requires: pbr
 Requires: six
 Requires: unittest2
-BuildRequires : funcsigs-python
+BuildRequires : configparser-python
+BuildRequires : enum34-python
 BuildRequires : linecache2
 BuildRequires : pbr
 BuildRequires : pip
@@ -30,9 +31,10 @@ BuildRequires : traceback2
 BuildRequires : unittest2
 
 %description
-mock is a library for testing in Python. It allows you to replace parts of
 your system under test with mock objects and make assertions about how they
-have been used.
+        have been used.
+        
+        mock is now part of the Python standard library, available as `unittest.mock
 
 %package python
 Summary: python components for the python-mock package.
@@ -46,8 +48,11 @@ python components for the python-mock package.
 %setup -q -n mock-2.0.0
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1489350342
+export SOURCE_DATE_EPOCH=1501863641
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -57,14 +62,18 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python -m unittest discover --verbose
 %install
-export SOURCE_DATE_EPOCH=1489350342
+export SOURCE_DATE_EPOCH=1501863641
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python*/*
+/usr/lib/python2*/*
+/usr/lib/python3*/*
