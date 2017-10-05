@@ -6,7 +6,7 @@
 #
 Name     : python-mock
 Version  : 2.0.0
-Release  : 35
+Release  : 36
 URL      : http://pypi.debian.net/mock/mock-2.0.0.tar.gz
 Source0  : http://pypi.debian.net/mock/mock-2.0.0.tar.gz
 Source99 : http://pypi.debian.net/mock/mock-2.0.0.tar.gz.asc
@@ -14,6 +14,7 @@ Summary  : Rolling backport of unittest.mock for all Pythons
 Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: python-mock-legacypython
+Requires: python-mock-python3
 Requires: python-mock-python
 Requires: funcsigs
 Requires: pbr
@@ -38,6 +39,7 @@ your system under test with mock objects and make assertions about how they
 %package legacypython
 Summary: legacypython components for the python-mock package.
 Group: Default
+Requires: python-core
 
 %description legacypython
 legacypython components for the python-mock package.
@@ -47,9 +49,19 @@ legacypython components for the python-mock package.
 Summary: python components for the python-mock package.
 Group: Default
 Requires: python-mock-legacypython
+Requires: python-mock-python3
 
 %description python
 python components for the python-mock package.
+
+
+%package python3
+Summary: python3 components for the python-mock package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the python-mock package.
 
 
 %prep
@@ -60,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505413416
+export SOURCE_DATE_EPOCH=1507170264
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -70,7 +82,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python -m unittest discover --verbose
 %install
-export SOURCE_DATE_EPOCH=1505413416
+export SOURCE_DATE_EPOCH=1507170264
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -86,5 +98,8 @@ echo ----[ mark ]----
 /usr/lib/python2*/*
 
 %files python
+%defattr(-,root,root,-)
+
+%files python3
 %defattr(-,root,root,-)
 /usr/lib/python3*/*
