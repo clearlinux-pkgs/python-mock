@@ -6,7 +6,7 @@
 #
 Name     : python-mock
 Version  : 2.0.0
-Release  : 40
+Release  : 41
 URL      : http://pypi.debian.net/mock/mock-2.0.0.tar.gz
 Source0  : http://pypi.debian.net/mock/mock-2.0.0.tar.gz
 Source99 : http://pypi.debian.net/mock/mock-2.0.0.tar.gz.asc
@@ -48,7 +48,6 @@ legacypython components for the python-mock package.
 %package python
 Summary: python components for the python-mock package.
 Group: Default
-Requires: python-mock-legacypython
 Requires: python-mock-python3
 
 %description python
@@ -72,7 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1507170264
+export SOURCE_DATE_EPOCH=1518745984
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -82,7 +81,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python -m unittest discover --verbose
 %install
-export SOURCE_DATE_EPOCH=1507170264
+export SOURCE_DATE_EPOCH=1518745984
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
