@@ -3,5 +3,6 @@
 traceback2
 six
 pbr
+pbr-legacypython
 unittest2
 linecache2
