@@ -1,7 +1,6 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
-traceback2
 six
 pbr
-unittest2
-linecache2
+setuptools-legacypython
+pbr-legacypython

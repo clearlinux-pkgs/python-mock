@@ -640,6 +640,7 @@ passlib
 patch
 patchutils
 pbr
+pbr-legacy
 pciutils
 pecan
 pep8
