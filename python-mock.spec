@@ -6,7 +6,7 @@
 #
 Name     : python-mock
 Version  : 2.0.0
-Release  : 48
+Release  : 49
 URL      : http://pypi.debian.net/mock/mock-2.0.0.tar.gz
 Source0  : http://pypi.debian.net/mock/mock-2.0.0.tar.gz
 Source99 : http://pypi.debian.net/mock/mock-2.0.0.tar.gz.asc
@@ -14,6 +14,7 @@ Summary  : Rolling backport of unittest.mock for all Pythons
 Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: python-mock-python3
+Requires: python-mock-license
 Requires: python-mock-python
 Requires: funcsigs
 Requires: pbr
@@ -21,12 +22,9 @@ Requires: six
 Requires: unittest2
 BuildRequires : linecache2
 BuildRequires : pbr
-BuildRequires : pbr-legacypython
 BuildRequires : pip
-
 BuildRequires : python3-dev
 BuildRequires : setuptools
-BuildRequires : setuptools-legacypython
 BuildRequires : six
 BuildRequires : traceback2
 BuildRequires : unittest2
@@ -37,13 +35,12 @@ your system under test with mock objects and make assertions about how they
         
         mock is now part of the Python standard library, available as `unittest.mock
 
-%package legacypython
-Summary: legacypython components for the python-mock package.
+%package license
+Summary: license components for the python-mock package.
 Group: Default
-Requires: python-core
 
-%description legacypython
-legacypython components for the python-mock package.
+%description license
+license components for the python-mock package.
 
 
 %package python
@@ -72,8 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1528574301
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1529115083
 python3 setup.py build -b py3
 
 %check
@@ -82,10 +78,10 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 python -m unittest discover --verbose
 %install
-export SOURCE_DATE_EPOCH=1528574301
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+mkdir -p %{buildroot}/usr/share/doc/python-mock
+cp LICENSE.txt %{buildroot}/usr/share/doc/python-mock/LICENSE.txt
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
@@ -93,9 +89,9 @@ echo ----[ mark ]----
 %files
 %defattr(-,root,root,-)
 
-%files legacypython
+%files license
 %defattr(-,root,root,-)
-/usr/lib/python2*/*
+/usr/share/doc/python-mock/LICENSE.txt
 
 %files python
 %defattr(-,root,root,-)

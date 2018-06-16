@@ -168,6 +168,7 @@ Z3
 absl-py
 accountsservice
 acme
+acrn-hypervisor
 adwaita-icon-theme
 aeon
 alabaster
@@ -548,6 +549,7 @@ linux-gce
 linux-hyperv
 linux-hyperv-lts
 linux-hyperv-mini
+linux-kata
 linux-kvm
 linux-lts
 linux-oracle
@@ -565,6 +567,7 @@ mariadb
 mash
 matplotlib
 mccabe
+meld
 mesa
 meson
 metacity
@@ -693,6 +696,7 @@ python-augeas
 python-dateutil
 python-future
 python-gflags
+python-kconfiglib
 python-krbV
 python-magic
 python-memcached
@@ -702,6 +706,7 @@ python-multilib
 python-pkgconfig
 python-pocketlint
 python-polib
+python-rpm-legacypython
 python-subunit
 python-systemd
 python-tappy
@@ -843,7 +848,6 @@ wheel
 widgetsnbextension
 wrapt
 xastir
-xcb-proto
 xdg-desktop-portal
 xdg-user-dirs
 xdg-user-dirs-gtk
