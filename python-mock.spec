@@ -6,7 +6,7 @@
 #
 Name     : python-mock
 Version  : 2.0.0
-Release  : 53
+Release  : 54
 URL      : http://pypi.debian.net/mock/mock-2.0.0.tar.gz
 Source0  : http://pypi.debian.net/mock/mock-2.0.0.tar.gz
 Source99 : http://pypi.debian.net/mock/mock-2.0.0.tar.gz.asc
@@ -79,12 +79,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530376726
+export SOURCE_DATE_EPOCH=1530379208
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1530376726
+export SOURCE_DATE_EPOCH=1530379208
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/python-mock
 cp LICENSE.txt %{buildroot}/usr/share/doc/python-mock/LICENSE.txt
