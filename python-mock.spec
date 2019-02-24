@@ -6,35 +6,31 @@
 #
 Name     : python-mock
 Version  : 2.0.0
-Release  : 64
+Release  : 65
 URL      : http://pypi.debian.net/mock/mock-2.0.0.tar.gz
 Source0  : http://pypi.debian.net/mock/mock-2.0.0.tar.gz
 Source99 : http://pypi.debian.net/mock/mock-2.0.0.tar.gz.asc
-Summary  : Rolling backport of unittest.mock for all Pythons
+Summary  : Mocking and Patching Library for Testing
 Group    : Development/Tools
 License  : BSD-2-Clause
-Requires: python-mock-python3
-Requires: python-mock-license
-Requires: python-mock-python
+Requires: python-mock-license = %{version}-%{release}
+Requires: python-mock-python = %{version}-%{release}
+Requires: python-mock-python3 = %{version}-%{release}
 Requires: funcsigs
 Requires: pbr
 Requires: six
-Requires: unittest2
+BuildRequires : buildreq-distutils23
+BuildRequires : buildreq-distutils3
 BuildRequires : pbr
 BuildRequires : pbr-legacypython
-BuildRequires : pip
-BuildRequires : python-core
-BuildRequires : python3-core
-BuildRequires : python3-dev
 BuildRequires : setuptools
 BuildRequires : setuptools-legacypython
 BuildRequires : six
 
 %description
+mock is a library for testing in Python. It allows you to replace parts of
 your system under test with mock objects and make assertions about how they
-        have been used.
-        
-        mock is now part of the Python standard library, available as `unittest.mock
+have been used.
 
 %package legacypython
 Summary: legacypython components for the python-mock package.
@@ -56,7 +52,7 @@ license components for the python-mock package.
 %package python
 Summary: python components for the python-mock package.
 Group: Default
-Requires: python-mock-python3
+Requires: python-mock-python3 = %{version}-%{release}
 
 %description python
 python components for the python-mock package.
@@ -79,15 +75,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530379208
+export SOURCE_DATE_EPOCH=1551039439
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1530379208
+export SOURCE_DATE_EPOCH=1551039439
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/python-mock
-cp LICENSE.txt %{buildroot}/usr/share/doc/python-mock/LICENSE.txt
+mkdir -p %{buildroot}/usr/share/package-licenses/python-mock
+cp LICENSE.txt %{buildroot}/usr/share/package-licenses/python-mock/LICENSE.txt
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 echo ----[ mark ]----
@@ -102,8 +98,8 @@ echo ----[ mark ]----
 /usr/lib/python2*/*
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/python-mock/LICENSE.txt
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/python-mock/LICENSE.txt
 
 %files python
 %defattr(-,root,root,-)
