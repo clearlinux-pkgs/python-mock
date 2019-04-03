@@ -13,6 +13,7 @@ boto
 case
 ceph-deploy
 certbot
+deprecated-Mako
 dogpile.cache
 flake8-builtins
 gabbi
@@ -22,6 +23,7 @@ kombu
 locustio
 oauthlib
 pyquery
+python-swiftclient
 python-tappy
 pywbem
 requests-mock
@@ -29,6 +31,7 @@ retry
 spyrk
 sqlalchemy-migrate
 statsd
+stestr
 sure
 trollius
 tzlocal
