@@ -11,13 +11,17 @@ amqp
 blockdiag
 boto
 case
+cassandra
 ceph-deploy
 certbot
+check-manifest
 deprecated-Mako
+deprecated-urllib3
 dogpile.cache
 flake8-builtins
 gabbi
 httpretty
+ironic
 jsonschema
 kombu
 locustio
@@ -33,6 +37,8 @@ sqlalchemy-migrate
 statsd
 stestr
 sure
+swift
+test-generator
 trollius
 tzlocal
 urllib3
