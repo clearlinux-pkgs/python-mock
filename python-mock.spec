@@ -4,7 +4,7 @@
 #
 Name     : python-mock
 Version  : 3.0.5
-Release  : 69
+Release  : 70
 URL      : https://files.pythonhosted.org/packages/2e/ab/4fe657d78b270aa6a32f027849513b829b41b0f28d9d8d7f8c3d29ea559a/mock-3.0.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/2e/ab/4fe657d78b270aa6a32f027849513b829b41b0f28d9d8d7f8c3d29ea559a/mock-3.0.5.tar.gz
 Summary  : Mocking and Patching Library for Testing
