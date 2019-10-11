@@ -2,5 +2,3 @@
 # picked up automatically. One name per line, no whitespace.
 six
 pbr
-setuptools-legacypython
-pbr-legacypython

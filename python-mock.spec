@@ -4,10 +4,10 @@
 #
 Name     : python-mock
 Version  : 3.0.5
-Release  : 70
+Release  : 71
 URL      : https://files.pythonhosted.org/packages/2e/ab/4fe657d78b270aa6a32f027849513b829b41b0f28d9d8d7f8c3d29ea559a/mock-3.0.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/2e/ab/4fe657d78b270aa6a32f027849513b829b41b0f28d9d8d7f8c3d29ea559a/mock-3.0.5.tar.gz
-Summary  : Mocking and Patching Library for Testing
+Summary  : Rolling backport of unittest.mock for all Pythons
 Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: python-mock-license = %{version}-%{release}
@@ -19,15 +19,14 @@ Requires: wheel
 BuildRequires : buildreq-distutils3
 BuildRequires : funcsigs
 BuildRequires : pbr
-BuildRequires : pbr-legacypython
-BuildRequires : setuptools-legacypython
 BuildRequires : six
 BuildRequires : wheel
 
 %description
-mock is a library for testing in Python. It allows you to replace parts of
 your system under test with mock objects and make assertions about how they
-have been used.
+        have been used.
+        
+        mock is now part of the Python standard library, available as `unittest.mock
 
 %package license
 Summary: license components for the python-mock package.
@@ -62,8 +61,8 @@ python3 components for the python-mock package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1561566583
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1570822555
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -79,7 +78,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/python-mock
-cp LICENSE.txt %{buildroot}/usr/share/package-licenses/python-mock/LICENSE.txt
+cp %{_builddir}/mock-3.0.5/LICENSE.txt %{buildroot}/usr/share/package-licenses/python-mock/2eec66c59087d1cf096a35fc620161b222591e05
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -90,7 +89,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/python-mock/LICENSE.txt
+/usr/share/package-licenses/python-mock/2eec66c59087d1cf096a35fc620161b222591e05
 
 %files python
 %defattr(-,root,root,-)
