@@ -1,5 +1,5 @@
 PKG_NAME := python-mock
-URL = https://files.pythonhosted.org/packages/2e/ab/4fe657d78b270aa6a32f027849513b829b41b0f28d9d8d7f8c3d29ea559a/mock-3.0.5.tar.gz
+URL = https://files.pythonhosted.org/packages/44/22/877b93e0e137bf57ed4ec73cd10bbbe2a900cd2a180c74bc86511394ab7f/mock-4.0.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
