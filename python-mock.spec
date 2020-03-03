@@ -4,7 +4,7 @@
 #
 Name     : python-mock
 Version  : 4.0.1
-Release  : 76
+Release  : 77
 URL      : https://files.pythonhosted.org/packages/1c/fd/141c477591ab50e27cd16a4969c957f915f4fb3c6323a624c548f38b507f/mock-4.0.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/1c/fd/141c477591ab50e27cd16a4969c957f915f4fb3c6323a624c548f38b507f/mock-4.0.1.tar.gz
 Summary  : Mocking and Patching Library for Testing
@@ -59,7 +59,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1581091310
+export SOURCE_DATE_EPOCH=1583213392
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar

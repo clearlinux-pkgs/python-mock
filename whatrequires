@@ -14,12 +14,11 @@ boto
 case
 ceph-deploy
 certbot
-check-manifest
 dogpile.cache
+fixtures
 flake8-builtins
 gsutil
 httpretty
-ironic
 jsonschema
 keystoneauth1
 koji
@@ -28,7 +27,6 @@ locustio
 oauthlib
 oslotest
 pyquery
-python-swiftclient
 python-tappy
 pywbem
 requests-mock
