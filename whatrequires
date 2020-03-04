@@ -28,6 +28,7 @@ oauthlib
 oslotest
 pyquery
 python-tappy
+pyudev
 pywbem
 requests-mock
 responses
