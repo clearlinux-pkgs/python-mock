@@ -4,10 +4,10 @@
 #
 Name     : python-mock
 Version  : 4.0.1
-Release  : 78
+Release  : 79
 URL      : https://files.pythonhosted.org/packages/1c/fd/141c477591ab50e27cd16a4969c957f915f4fb3c6323a624c548f38b507f/mock-4.0.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/1c/fd/141c477591ab50e27cd16a4969c957f915f4fb3c6323a624c548f38b507f/mock-4.0.1.tar.gz
-Summary  : Mocking and Patching Library for Testing
+Summary  : Rolling backport of unittest.mock for all Pythons
 Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: python-mock-license = %{version}-%{release}
@@ -20,9 +20,10 @@ BuildRequires : six
 BuildRequires : wheel
 
 %description
-mock is a library for testing in Python. It allows you to replace parts of
 your system under test with mock objects and make assertions about how they
-have been used.
+        have been used.
+        
+        mock is now part of the Python standard library, available as `unittest.mock
 
 %package license
 Summary: license components for the python-mock package.
@@ -36,7 +37,6 @@ license components for the python-mock package.
 Summary: python components for the python-mock package.
 Group: Default
 Requires: python-mock-python3 = %{version}-%{release}
-Provides: pypi(mock)
 
 %description python
 python components for the python-mock package.
@@ -46,6 +46,7 @@ python components for the python-mock package.
 Summary: python3 components for the python-mock package.
 Group: Default
 Requires: python3-core
+Provides: pypi(mock)
 
 %description python3
 python3 components for the python-mock package.
@@ -60,8 +61,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583295483
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1583525795
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
