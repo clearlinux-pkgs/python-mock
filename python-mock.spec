@@ -4,10 +4,10 @@
 #
 Name     : python-mock
 Version  : 4.0.2
-Release  : 82
+Release  : 83
 URL      : https://files.pythonhosted.org/packages/2e/35/594f501b2a0fb3732c8190ca885dfdf60af72d678cd5fa8169c358717567/mock-4.0.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/2e/35/594f501b2a0fb3732c8190ca885dfdf60af72d678cd5fa8169c358717567/mock-4.0.2.tar.gz
-Summary  : Mocking and Patching Library for Testing
+Summary  : Rolling backport of unittest.mock for all Pythons
 Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: python-mock-license = %{version}-%{release}
@@ -22,9 +22,10 @@ BuildRequires : twine
 BuildRequires : wheel
 
 %description
-mock is a library for testing in Python. It allows you to replace parts of
 your system under test with mock objects and make assertions about how they
-have been used.
+        have been used.
+        
+        mock is now part of the Python standard library, available as `unittest.mock
 
 %package license
 Summary: license components for the python-mock package.
@@ -62,15 +63,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583971752
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1603402228
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
