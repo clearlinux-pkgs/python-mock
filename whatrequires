@@ -15,6 +15,7 @@ knack
 koji
 oauthlib
 pyquery
+python-dotenv
 pyudev
 pywbem
 requests-mock
